@@ -18,6 +18,7 @@ RUN apt-get update \
     # libboost-all-dev \
     automake \
     autoconf \
+    libtool \
     gdb \ 
     rsync 
 
