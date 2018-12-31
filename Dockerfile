@@ -18,11 +18,15 @@ RUN apt-get update \
     # libboost-all-dev \
     automake \
     autoconf \
-    gdb
+    gdb \ 
+    rsync 
 
 # c/cxx env
 # ENV LD_LIBRARY_PATH=/libs
 # ENV CPLUS_INCLUDE_PATH=/libs/include
+
+# enable rsync for clion remote debug
+RUN sed -i "s/RSYNC_ENABLE=false/RSYNC_ENABLE=true/g" /etc/default/rsync
 
 # zsh 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
